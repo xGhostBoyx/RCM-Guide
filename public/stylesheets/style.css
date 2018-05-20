@@ -1,0 +1,165 @@
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.navbar {
+  background-color: rgb(24, 26, 29);
+}
+
+body { 
+  padding-top: 0px;
+}
+
+html, body {
+  color: azure;
+  background-color: #2E3440;
+}
+
+li {
+  margin: 2px 0;
+}
+
+.card {
+  color: azure;
+  background-color: #2E3440;
+  border: 1px solid azure;
+}
+
+hr {
+  border-top: 1px solid azure;
+}
+
+code {
+  padding: 1px;
+  background: #272c36;
+  border: 1px solid lightslategrey;
+  border-radius: 4px;
+  color: rgb(221, 225, 230);
+  white-space: nowrap;
+}
+
+.content-table {
+  padding: 5px;
+  color: azure;
+  background: #272c36;
+  border: 1px solid rgb(22, 22, 22);
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.content-table-title {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.content-table-hr {
+  border-top: 1px solid rgb(22, 22, 22);
+}
+
+.a-table {
+  color: #b8d2df;
+  text-decoration: underline;
+}
+
+.a-table:hover {
+  color: #b8d2df;
+  text-decoration: initial;
+}
+
+.a-table:visited {
+  color: #8a9ea7;
+  text-decoration: underline;
+}
+
+.a-table-section {
+  display: block;
+  padding-left: 15px;
+}
+
+.p-box {
+  margin: 2em 0;
+  padding: 1em;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
+  background-color: #485e7b; 
+  font-size: 1em !important;
+  font-weight: bold;
+  text-indent: initial;
+  box-shadow: 0 2px 2px rgba(94,129,172,0.25) !important;
+  color: #D8DEE9 !important;
+  border-radius: 4px;
+}
+
+.p-box > a {
+  color: #7694b8;
+  text-decoration: underline;
+}
+
+.p-box > a:hover {
+  color: #7694b8;
+  text-decoration: initial;
+}
+
+.box-a {
+  color: #d72828;
+  text-decoration: underline;
+}
+
+.box-a:hover {
+  color: #d72828;
+  text-decoration: initial;
+}
+
+.h1-page-title {
+  display: block;
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+.alert-danger {
+  font-weight: bold;
+  z-index: 0;
+}
+
+.alert-box {
+  margin: 2em 0;
+  padding: 1em;
+  font-family: -apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
+  background-color: #f8d7da; 
+  font-size: 1em !important;
+  font-weight: bold;
+  text-indent: initial;
+  box-shadow: 0 2px 2px rgba(94,129,172,0.25) !important;
+  color: #d72828 !important;
+  border-radius: 4px;
+}
+
+img:hover {
+  color: #424242; 
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(2.5);
+  -ms-transform: scale(32.5); /* IE 9 */
+  -webkit-transform: scale(2.5); /* Safari and Chrome */
+}
+
+div#olli span#normal {
+  display: inline;
+}
+
+div#olli:hover span#normal {
+  display: none;
+}
+
+div#olli span#other {
+  display: none;
+}
+
+div#olli:hover span#other {
+  display: inline;
+}

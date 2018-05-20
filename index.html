@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Switch Pin Bridge Methods</title>
+  <link rel="shortcut icon" href="public/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="public/images/favicon.ico" type="image/x-icon" />
+  <script src="public/js/jquery.min.js"></script>
+  <script src="public/js/bootstrap.bundle.min.js"></script>
+  <link href="public/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="public/stylesheets/style.css" rel="stylesheet" type="text/css">
+  <meta name="description" content="Different Methods of Modifying Your Switch to Access RCM.">
+  <meta property="og:image" content="https://i.imgur.com/CVSu1zc.png">
+</head>
+
+<body>
+  <div class="container-content container-fluid">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <h1 class="mt-5 text-center h1-page-title">Switch Pin Bridge Methods</h1>
+        <br/>
+        <h3>What are we doing that makes the Switch boot into recovery mode?</h3>
+        <p>
+          The switch boots into recovery mode when the “Home” button and the “Volume Up” button are being pressed while booting the
+          switch. The issue is that it’s humanly impossible to hold down the “Home” button because the console is looking
+          for the “Tegra Home button” not the “Joycon Home button”. Attempting to enter RCM without some sort of modification
+          results in the console booting normal because the wanted Home button won’t technically be pressed on the boot.
+        </p>
+        <h3>Will I want a more permanent modification?</h3>
+        <p>
+          That’s up to you, but the answer will probably be “yes.” Since there is no untethered method of booting custom firmware on
+          versions above 1.0.0, you will need to enter RCM every time you turn your console off and back on if you want to
+          use custom firmware.
+        </p>
+        <h3>What’s the goal?</h3>
+        <p>
+          The goal is to make the Switch think the Tegra chip home button is being pressed on the initial boot of the console. This
+          is done by providing a grounded contact to pad #10 in the right joycon rail. This can be done through a few different
+          methods explained below. Some of which require modification of the Joycon.
+        </p>
+        <h3>Will the Joycon work after modification/will the home button constantly be held down?</h3>
+        <p>
+          The right Joycon is not actually damaged in these modifications, and they still function with zero issues (minus some possible
+          minor ones mentioned later on). The home button is still fully functional and is not considered to be constantly
+          being held down, so you won’t need to buy extra Joycons (unless you break them of course).
+        </p>
+        <hr>
+        <h3>Temporary Method(s)</h3>
+        <ul>
+          <li>
+            <a class="a-table" href="#metal_bridge">Metal Bridge</a>
+          </li>
+        </ul>
+        <h3>Semi-Permanent Method(s)</h3>
+        <ul>
+          <li>
+            <a class="a-table" href="#jig">Jig</a>
+          </li>
+          <li>
+            <a class="a-table" href="#tin_foil">Tin Foil</a>
+          </li>
+        </ul>
+        <h3>Permanent Method(s)</h3>
+        <ul>
+          <li>
+            <a class="a-table" href="#bent_joycon_pins">Bent Joycon Pins</a>
+          </li>
+          <li>Soldered Joycon</li>
+          <ul>
+            <li>
+              <a class="a-table" href="#soldered_joycon_910">Pads 9 &amp; 10</a>
+            </li>
+            <li>
+              <a class="a-table" href="#soldered_joycon_710">Pads 7 &amp; 10</a>
+            </li>
+          </ul>
+        </ul>
+        <hr>
+        <h2 id="metal_bridge">Metal Bridge</h2>
+        <div class="alert-box">
+          This method could damage the pads inside your Joycon rail, especially over extended use.
+        </div>
+        <p>
+          Inside the Nintendo Switch’s right joycon rail there are 10 pads, as shown below:
+          <br>
+          <div class="text-center">
+            <a target="_blank" href="https://i.imgur.com/DqbAEjR.jpg">
+              <img class="img" src="https://i.imgur.com/DqbAEjR.jpg" height="300" />
+            </a>
+          </div>
+          <br>
+          <br>The goal in this method is to use any piece of conductive material to bridge pad 10 with a ground. The metal could
+          be anything from proper wire, to a paper clip, to a screwdriver. The ground could be any grounded metal, including
+          the joycon rail itself, or pads 1, 2, or 7. Make sure you
+          <strong>DO NOT contact pad 4 when the console is booting/on</strong>. Pad 4 provides power to the Joycons and will fry
+          your console if you bridge to it.
+        </p>
+        <p>
+          Bridging Pad 1 and 10 Examples:
+          <br>
+          <div class="text-center">
+            <a target="_blank" href="https://i.imgur.com/Vz4nIIx.jpg">
+              <img src="https://i.imgur.com/Vz4nIIx.jpg" width="400">
+            </a>
+            <a target="_blank" href="https://i.imgur.com/ZtXNcM0.jpg">
+              <img src="https://i.imgur.com/ZtXNcM0.jpg" width="400">
+            </a>
+          </div>
+          <br> Thanks to HowDenKing#0001 on discord for the pictures
+        </p>
+        <hr>
+        <h2 id="jig">Jig</h2>
+        <div class="alert-box">
+          This method could damage the pads inside your Joycon rail, especially over extended use.
+        </div>
+        <p>
+          This Method is similar to the method 1, but slightly more permanent. Similarly you’re using metal to bridge pad 10 in the
+          right Joycon rail to a ground (probably pad 1), image of the pad layout bellow:
+          <br>
+          <div class="text-center">
+            <a target="_blank" href="https://i.imgur.com/DqbAEjR.jpg">
+              <img src="https://i.imgur.com/DqbAEjR.jpg" width="400" />
+            </a>
+          </div>
+          <br>
+          <br> The difference here is that you’re using a 3D printed piece of plastic in order to hold the metal that will be
+          making the bridge. There are many places you can find model downloads for Jigs, one of which can be found
+          <a class="a-table" target="_blank" href="https://www.thingiverse.com/thing:2877484">here</a> or
+          <a class="a-table" target="_blank" href="https://www.thingiverse.com/thing:2892320">here</a>. Despite the fact that you can use any piece of metal, it’s highly recommend that you DO NOT use a paperclip
+          or other piece of ridged or sharp metal in your jig. It’s best to use a soft metal wire bent into a curve, similar
+          to the pins inside the joycon themselves as seen below.
+          <br>
+          <br>
+          <div class="text-center">
+            <a target="_blank" href="https://i.imgur.com/u9LzlsD.jpg">
+              <img src="https://i.imgur.com/u9LzlsD.jpg" width="400" />
+            </a>
+          </div>
+          <br>
+          <br> Using a ridged or sharp piece of metal in your jig will likely result in damage to the pads over extended use.
+          You can also buy a premade Jig, and in that case the same rules apply, just because someone makes and sells a jig,
+          it doesn’t mean they know what they are doing. The Jig shown above can be purchased
+          <a class="a-table" target="_blank" href="https://switchjigs.com/">here</a>.
+        </p>
+        <hr>
+        <h2 id="tin_foil">Tin Foil</h2>
+        <div class="alert-box">
+          This method may result in the right Joycon being considered in wireless mode even while attached to the Switch. If this happens
+          and you want to use the console in handheld mode you can either remove the mod, or put the same mod on the left
+          Joycon resulting in them both acting like they are in wireless mode while connected to the console (they will still
+          charge).
+        </div>
+        <p>
+          This method DOES NOT require you to open your right Joycon. Looking into the bottom of your right Joycon you should be able
+          to see the pins used to connect the Joycon to the Switch. There is an example of the pins from the inside bellow.
+          Pin 1 is closest to the controls, and pin 10 is closest to the back of the Joycon.
+          <br>
+          <div class="text-center">
+            <a target="_blank" href="https://i.imgur.com/QHpp2dU.jpg">
+              <img src="https://i.imgur.com/QHpp2dU.jpg" height="400" />
+            </a>
+          </div>
+          <br>
+          <br> The goal of this method is to put a small thin piece of tin foil into your Joycon so it covers ONLY pins 9 and
+          10. Than fold the foil over the back of the rail to tape it in place. The Joycon is completely functional while
+          this mod is installed, but the other Joycon mods are better, but slightly harder options.
+          <br>
+          <br> Tin Foil Examples from 8-Bit Flashback on YouTube:
+          <br>
+          <br>
+          <div class="text-center">
+            <a target="_blank" href="https://i.imgur.com/vNC8qLQ.png">
+              <img src="https://i.imgur.com/vNC8qLQ.png" width="400" />
+            </a>
+            <a target="_blank" href="https://i.imgur.com/p4GaAsd.png">
+              <img src="https://i.imgur.com/p4GaAsd.png" width="400" />
+            </a>
+          </div>
+          <br>
+          <hr>
+          <h2 id="bent_joycon_pins">Bent Joycon Pins</h2>
+          <div class="alert-box">
+            There are currently some unconfirmed issues with this method, and the Joycons may stop working in handheld mode if they are
+            updated to 5.0.2, keep in mind the Joycon fw is different than the Switch’s fw, and the Joycons don’t auto update.
+            A possible fix is unplugging the Joycon battery and replugging it in, but it’s still very unclear.
+          </div>
+          <p>
+            This method DOES require you to open your right Joycon. Be very careful when opening your Joycon to not tug on any of the
+            ribbon cables as they can break very easily. After you’ve opened your right Joycon, using a Y wing 00 screwdriver,
+            you will notice a series of pins which contact the pads in the Joycon rail (these pins shown below).
+            <br>
+            <div class="text-center">
+              <a target="_blank" href="https://i.imgur.com/QHpp2dU.jpg">
+                <img src="https://i.imgur.com/QHpp2dU.jpg" height="400" />
+              </a>
+            </div>
+            <br> Your goal now is to take a thin object, something like a knife, and lightly lift pins 9 and 10 out of their
+            indented pockets. Than bend pins 9 and 10 each half way together so they are touching.
+            <br>
+            <br>
+            <h5>Troubleshooting:</h5>
+            My right Joycon is no longer working in handheld mode, what do I do? If your Joycons are on fw 5.0.2, or are updated to this
+            fw you might run into this issue. This issue is inconsistent and doesn’t happen to everyone, however it can seemingly
+            be fixed by unplugging the battery of the Joycon for a few seconds, then plugging it back in. Keep in mind the
+            Joycon fw is different than the consoles fw and it needs to be updated manually in the system settings. If that
+            doesn’t fix the issue you may have bent the 9th pin too far, in which case simply try again, or bend the pins
+            back to normal and use a different method.
+            <br>
+            <br> Bending pin example from Sonlen#0666 on Discord:
+            <br>
+            <br>
+            <div class="text-center">
+              <a target="_blank" href="https://i.imgur.com/G7CPNdC.jpg">
+                <img src="https://i.imgur.com/G7CPNdC.jpg" height="400" />
+              </a>
+            </div>
+            <br>
+          </p>
+          <hr>
+          <h2 id="soldered_joycon_910">Soldered Joycon Pads 9 &amp; 10</h2>
+          <div class="alert-box">
+            There are currently some unconfirmed issues with this method, and the Joycons may stop working in handheld mode if they are
+            updated to 5.0.2, keep in mind the Joycon fw is different than the Switch’s fw, and the Joycons don’t auto update.
+            A possible fix is unplugging the Joycon battery and replugging it in, but it’s still very unclear.
+          </div>
+          <p>
+            This method DOES require you to open your right Joycon. Be very careful when opening your Joycon to not tug on any of the
+            ribbon cables as they can break very easily. After you’ve opened your right Joycon, using a Y wing 00 screwdriver,
+            you will notice a series of pads above the pins which contact the pads in the Joycon rail (these pads shown below).
+            <br>
+            <div class="text-center">
+              <a target="_blank" href="https://i.imgur.com/LqaDgXY.jpg">
+                <img src="https://i.imgur.com/LqaDgXY.jpg" height="400" />
+              </a>
+            </div>
+            <br> In this method we are going to be focusing on the 9th and 10th pads. You’re going to want to use a small bit
+            of solder or a small wire soldered to the pads in order to bridge the contacts. Once this is completed you are
+            ready to go.
+            <br>
+            <br>
+            <h5>Troubleshooting:</h5>
+            My right Joycon is no longer working in handheld mode, what do I do?
+            <br>If your Joycons are on fw 5.0.2, or are updated to this fw you might run into this issue. This issue is inconsistent
+            and doesn’t happen to everyone, however it can seemingly be fixed by unplugging the battery of the Joycon for
+            a few seconds, then plugging it back in. Keep in mind the Joycon fw is different than the consoles fw and it
+            needs to be updated manually in the system settings.
+            <br>
+            <br> Soldering Pads 9 and 10 example from YyAoMmIi#3705 on Discord:
+            <br>
+            <br>
+            <div class="text-center">
+              <a target="_blank" href="https://i.imgur.com/nM70pE4.jpg">
+                <img src="https://i.imgur.com/nM70pE4.jpg" height="400" />
+              </a>
+            </div>
+            <br>
+          </p>
+          <hr>
+          <h2 id="soldered_joycon_710">Soldered Joycon Pads 7 &amp; 10</h2>
+          <p>
+            This method DOES require you to open your right Joycon, and requires a “0805 10k resistor”. This method also avoids the possibility
+            of your Joycon not working in handheld mode after modification. Be very careful when opening your Joycon to not
+            tug on any of the ribbon cables as they can break very easily. After you’ve opened your right Joycon, using a
+            Y wing 00 screwdriver, you will notice a series of pads above the pins which contact the pads in the Joycon rail
+            (these pads shown below).
+            <br>
+            <div class="text-center">
+              <a target="_blank" href="https://i.imgur.com/LqaDgXY.jpg">
+                <img src="https://i.imgur.com/LqaDgXY.jpg" height="400" />
+              </a>
+            </div>
+            <br> In this method we are going to be focusing on the 7th and 10th pads. You’re going to want to use a 0805 10k
+            resistor, soldered between pads 7 and 10. Make sure you don’t have excess solder leaking onto other pads. Once
+            this is completed you are ready to go.
+            <br>
+            <br>Soldering Pads 7 and 10 with a resistor example from jerbear64#6464 on Discord:
+            <br>
+            <br>
+            <div class="text-center">
+              <a target="_blank" href="https://i.imgur.com/Q615Bt0.jpg">
+                <img src="https://i.imgur.com/Q615Bt0.jpg" height="400" />
+              </a>
+            </div>
+            <br>0805 10k resistor between pins 7 and 10
+          </p>
+          <hr>
+          <h2>Credits</h2>
+          <ul>
+            <li>xGhostBoyx (writing)</li>
+            <li>Jisagi (implementation)</li>
+            <li>
+              <div id="olli">
+                <span id="normal">olliz0r (editor)</span>
+                <span id="other">olliz0r (is mir relativ egal was da steht lol ¯\_(ツ)_/¯)</span>
+              </div>
+            </li>
+          </ul>
+          <hr>
+        </p>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+  </div>
+</body>
+
+</html>
