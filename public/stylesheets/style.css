@@ -144,7 +144,7 @@ img:hover {
   transition: all .3s ease-in;
   opacity: 1;
   transform: scale(2.5);
-  -ms-transform: scale(32.5); /* IE 9 */
+  -ms-transform: scale(2.5); /* IE 9 */
   -webkit-transform: scale(2.5); /* Safari and Chrome */
 }
 
